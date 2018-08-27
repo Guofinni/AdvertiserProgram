@@ -1,0 +1,92 @@
+.navbar{
+    border-radius: 0px;
+}
+
+.with_botton_navbar{
+    margin-bottom: 60px;
+}
+
+.full_width{
+    width: 100%;
+}
+
+.clear_left_margin{
+    margin-left: 0px;
+}
+
+.clear_right_margin{
+    margin-right: 0px;
+}
+
+.clear_top_margin{
+    margin-top: 0px;
+}
+
+.clear_bottom_margin{
+    margin-bottom: 0px;
+}
+
+.margin_top_bottom_20{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.clear_padding_right{
+    padding-right: 0px;
+}
+
+.clear_padding_top{
+    padding-top: 0px;
+}
+
+.margin_10{
+    margin: 10px;
+}
+
+.identity_chose{
+    min-height: 300px;
+}
+
+.identity_chose i{
+    font-size: 20em;
+}
+
+.identity_chose a{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.ad_client_img_frame{
+    width: 90px;
+    height: 90px;
+}
+
+.task_single_item{
+    cursor: pointer;
+}
+
+#tel_login{
+    /*margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 10px;*/
+}
+
+.login_page{
+    max-width: 600px;
+}
+
+.tab-content-border{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    padding-top: 40px;
+}
+
+.nav-secned{
+    margin-left: 20px;
+}
+
+.emoji{
+    width: 1.3%;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+   <meta charset="UTF-8">
+   <title></title>
+
+   <script type="text/javascript">
+function getImageSize(obj){
+  var _file=document.getElementById("file");
+  var i=_file.value.lastIndexOf('.');
+  var len=_file.value.length;
+  var extEndName=_file.value.substring(i+1,len);
+  var extName="GIF,BMP,JPG,JPEG";//首先对格式进行验证
+  if(extName.indexOf(extEndName.toUpperCase())==-1){
+//filemessage.innerHTML="*您只能输入"+extName+"格式的文件"
+alert("*您只能输入"+extName+"格式的文件");
+  }
+ 
+}
+   </script>
+</head>
+<body>
+<input type="file" name="file" id="file" onchange="getImageSize(this)"/>
+</body>
+</html>

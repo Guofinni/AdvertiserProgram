@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://ad.henkuai.com/ad/action?action=sta_click -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>广告主-基本信息</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/chardinjs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="css/mains.css">
+    
+    
+</head>
+
+<body class="with_botton_navbar">
+<!-- 弹出框 -->
+<div class="modal fade in" id="get_phone_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="margin-top:100px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改手机号</h4>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                	<div>
+                    	<form class="form-horizontal" action="">
+                            <div class="form-group">
+                                <label for="old-password" class="col-sm-2 control-label">登陆密码</label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" id="login-password" name="password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="col-sm-2 control-label">手机号码</label>
+                                <div class="col-sm-8">
+                                    <input type="tel" class="form-control info_input_holder" id="p_phone" name="phone" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="vcode" class="col-sm-2 control-label">验证码</label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control info_input_holder" id="p_vcode" name="vcode" accept="image/jpeg,image/png" placeholder="">
+                                </div>
+                                <div class="col-sm-3">
+									<button id="r_code1" class="btn btn-primary btn-block" type="button" onclick="refresh_code($('#r_code1'),$('#d_code1'),$('#reget_leave_time1'));">获取验证码</button>
+									<button id="d_code1" class="btn btn-default hidden" type="button" disabled="disabled">
+										重新获取 <span id="reget_leave_time1">30</span>
+									</button>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-success" id="to_server_btn" onclick="phone_edit()">提交</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default">
+<!-- 导航条 -->
+    <div class="container-fluid">
+    	<div class="row">
+        <div class="col-sm-3 navbar-header">
+            <a class="navbar-brand" href="index.html">开发者网盟平台</a>
+        </div>
+        <div class="collapse navbar-collapse" id="header-btns-area">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span>用户00854</span></a><a href="#"><span class="num">0元</span></a></li>
+                <li><a href="ad_news.html" class="message"><i class="ms-number">99</i></a></li>
+                <li><a href="login.html" class="exit"></a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</nav>
+     
+<div class="container-fluid cont-main">
+    <div class="row">
+        <div class="col-sm-2 nav-left" id="nav-left">
+            <!-- 左侧导航 -->
+            <ul class="nav nav-pills nav-stacked">
+                <li><a class="stair stair1">功能</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_release_CPC_task.html">发布CPC任务</a></li>
+                    </ul>
+                </li>
+                <li><a class="stair stair2">管理</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_task_manager.html">任务管理</a></li>
+                        <li><a href="ad_blacklist.html">黑名单管理</a></li>
+                    </ul>
+                </li>
+                <li><a class="stair stair3"><i class="fa fa-user-secret"></i>个人中心</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li class="active"><a href="ad_basic_information.html">基本信息</a></li>
+                        <li><a href="ad_recharge.html">充值</a></li>
+                        <li><a href="ad_recharge_record.html">充值记录</a></li>
+                        <li><a href="ad_application_invoice.html">申请发票</a></li>
+                        <li><a href="ad_password.html">修改密码</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="left-side">
+            	<p><a href="#"><img src="images/qq.png"></a> | <a href="#">反馈建议</a></p>
+                <p>版本号：2.0.0</p>
+            </div>
+        </div>
+        <div class="col-sm-10 cont-right" id="cont-right">
+            <div class="page-header clear_top_margin">
+                <h1 class="first-title title-1">基本信息</h1>
+            </div>
+            <div class="panel-body">
+              <dl>   
+                <dd>登陆账号：<span>5541128</span></dd>
+                <dd>账号角色：<span>广告主</span></dd>
+                <dd>手机号码：<span>14552368759</span>&nbsp;&nbsp;<a href="#"onclick="showGetphoneDialog(this)">修改</a></dd>
+                <dd>余额：<span class="red">15362.00</span>元</dd>
+              </dl>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+    <script src="js/chardinjs.min.js"></script>
+    <script src="js/site.js"></script>
+        <script>
+function showGetphoneDialog() {
+        $('#get_phone_alert').modal();
+}
+</script>
+
+
+
+</body></html>

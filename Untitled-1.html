@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+   <meta charset="UTF-8">
+   <title></title>
+<!--<script type="text/javascript">
+		var ss= "3.333";
+		var type = /^[0-9]*[1-9][0-9]*$/;
+		var re = new RegExp(type);
+		if (ss.match(re) == null) {
+			alert("请输入大于零的整数!");
+		} 
+</script>
+-->
+<!--<script type="text/javascript">
+var browser=navigator.appName
+var b_version=navigator.appVersion
+var version=b_version.split(";");
+var trim_Version=version[1].replace(/[ ]/g,"");
+if(browser=="Microsoft Internet Explorer" && (trim_Version=="MSIE4.0" || trim_Version=="MSIE5.0" || trim_Version=="MSIE6.0" || trim_Version=="MSIE7.0"))
+{
+alert("请使用IE 8.0以上版本浏览器访问");
+window.close();
+}
+
+</script>-->
+</head>
+<body>
+<div class="inputCard-wrap">
+  <input type="text" class="inputCard">
+  <div class="panelCard"></div>
+</div>
+  
+<style type="text/css">
+  .inputCard-wrap{
+    position: relative;
+  }
+  .inputCard-wrap .panelCard{
+    display: none;
+    position: absolute;
+    top:-34px;
+    left:0;
+    z-index: 100;
+    background-color:#fff9da;
+    border:1px #ffce6e solid;
+    padding:10px;
+    height:40px;
+    font-size: 1.7em;
+    line-height:18px;
+    color:#585858;
+  }
+</style>
+<script type="text/javascript">
+/* 银行卡号实时验证放大显示 */
+$(".inputCard").keyup(function(e){
+  var self = $.trim(e.target.value),
+    parent = $(e.target).closest(".inputCard-wrap"),
+    panel = $(".panelCard", parent),
+    val = self.replace(/\D/g, '');
+  if(self.length > 18){
+    this.value = self.substr(0, 18);
+    return this.value;
+  }
+  if(val == self){
+    panel.show();
+    val = self.replace(/(....)(?=.)/g, '$1 ');
+    panel.html(val);
+  }else{
+    panel.hide();
+    return self;
+  }
+});
+$(".inputCard").unbind('focusin');
+$(".inputCard").bind('focusin',function(e){
+  var self = $.trim(e.target.value),
+    parent = $(e.target).closest(".inputCard-wrap"),
+    panel = $(".panelCard", parent),
+    val = self.replace(/(....)(?=.)/g, '$1 ');
+  if(val != '') {
+    panel.show();
+    panel.html(val);
+  }
+});
+$(".inputCard").unbind('focusout');
+$(".inputCard").bind('focusout',function(e){
+  var parent = $(e.target).closest(".inputCard-wrap"),
+    panel = $(".panelCard", parent);
+  panel.hide();
+});
+</script>
+</body>
+</html>

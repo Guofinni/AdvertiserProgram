@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://ad.henkuai.com/ad/action?action=sta_click -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>广告主-申请发票</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/chardinjs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="css/mains.css">
+    
+</head>
+
+<body class="with_botton_navbar">
+<!-- 弹出框 -->
+     
+<nav class="navbar navbar-default">
+<!-- 导航条 -->
+    <div class="container-fluid">
+    	<div class="row">
+        <div class="col-sm-3 navbar-header">
+            <a class="navbar-brand" href="index.html">开发者网盟平台</a>
+        </div>
+        <div class="collapse navbar-collapse" id="header-btns-area">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span>用户00854</span></a><a href="#"><span class="num">0元</span></a></li>
+                <li><a href="ad_news.html" class="message"><i class="ms-number">99</i></a></li>
+                <li><a href="login.html" class="exit"></a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</nav>
+     
+<div class="container-fluid cont-main">
+    <div class="row">
+        <div class="col-sm-2 nav-left" id="nav-left">
+            <!-- 左侧导航 -->
+            <ul class="nav nav-pills nav-stacked">
+                <li><a class="stair stair1">功能</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_release_CPC_task.html">发布CPC任务</a></li>
+                    </ul>
+                </li>
+                <li><a class="stair stair2">管理</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_task_manager.html">任务管理</a></li>
+                        <li><a href="ad_blacklist.html">黑名单管理</a></li>
+                    </ul>
+                </li>
+                <li><a class="stair stair3"><i class="fa fa-user-secret"></i>个人中心</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_basic_information.html">基本信息</a></li>
+                        <li><a href="ad_recharge.html">充值</a></li>
+                        <li><a href="ad_recharge_record.html">充值记录</a></li>
+                        <li class="active"><a href="ad_application_invoice.html">申请发票</a></li>
+                        <li><a href="ad_password.html">修改密码</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="left-side">
+            	<p><a href="#"><img src="images/qq.png"></a> | <a href="#">反馈建议</a></p>
+                <p>版本号：2.0.0</p>
+            </div>
+        </div>
+        <div class="col-sm-10 cont-right" id="cont-right">
+            <div class="page-header clear_top_margin">
+                <h1 class="first-title title-1">申请发票</h1>
+            </div>
+            <form class="form-horizontal" action="" method="post" onsubmit="return chech_application();">
+                <h1 class="first-title">发票信息</h1>
+                <div class="form-group">
+                    <label for="invoice_charge" class="col-sm-2 control-label">剩余发票金额</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="invoice_charge" name="invoice_charge" value="0.00" disabled="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount" class="col-sm-2 control-label">发票金额</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="amount" name="amount" onblur="overFormat(this)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="type" class="col-sm-2 control-label">发票类型</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="type" name="type">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="title" class="col-sm-2 control-label">发票抬头</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="title" name="title">
+                    </div>
+                </div>
+				<br>
+                <h1 class="first-title">寄件人信息</h1>
+                <div class="form-group">
+                    <label for="addressee" class="col-sm-2 control-label">收件人</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="addressee" name="addressee">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contact" class="col-sm-2 control-label">联系方式</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="contact" name="contact">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address" class="col-sm-2 control-label">邮寄地址</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="address" name="address">
+                    </div>
+                </div>
+                
+                <div class="col-sm-2" style="margin-left:17.66666%;">
+                    <button type="submit" class="btn btn-success btn-block">提交</button>
+                </div>
+            </form>
+<script language="javascript">
+function overFormat(th){
+    var v = th.value;
+    if(v === ''){
+        v = '0.00';
+    }else if(v === '0'){
+        v = '0.00';
+    }else if(v === '0.'){
+        v = '0.00';
+    }else if(/^0+\d+\.?\d*.*$/.test(v)){
+        v = v.replace(/^0+(\d+\.?\d*).*$/, '$1');
+        v = inp.getRightPriceFormat(v).val;
+    }else if(/^0\.\d$/.test(v)){
+        v = v + '0';
+    }else if(!/^\d+\.\d{2}$/.test(v)){
+        if(/^\d+\.\d{2}.+/.test(v)){
+            v = v.replace(/^(\d+\.\d{2}).*$/, '$1');
+        }else if(/^\d+$/.test(v)){
+            v = v + '.00';
+        }else if(/^\d+\.$/.test(v)){
+            v = v + '00';
+        }else if(/^\d+\.\d$/.test(v)){
+            v = v + '0';
+        }else if(/^[^\d]+\d+\.?\d*$/.test(v)){
+            v = v.replace(/^[^\d]+(\d+\.?\d*)$/, '$1');
+        }else if(/\d+/.test(v)){
+            v = v.replace(/^[^\d]*(\d+\.?\d*).*$/, '$1');
+            ty = false;
+        }else if(/^0+\d+\.?\d*$/.test(v)){
+            v = v.replace(/^0+(\d+\.?\d*)$/, '$1');
+            ty = false;
+        }else{
+            v = '0.00';
+        }
+    }
+    th.value = v; 
+}
+
+ function chech_application(){
+                var count = $("#invoice_charge").val();
+                if(parseInt(count)<1){
+                    alert("剩余发票金额不足");
+                    return false;
+                }
+                if(!$("#amount").val()){
+                    alert("请输入发票金额");
+                    return false;
+                }
+                if(!$("#type").val()){
+                    alert("请输入发票类型");
+                    return false;
+                }
+                if(!$("#title").val()){
+                    alert("请输入发票抬头");
+                    return false;
+                }
+                if(!$("#addressee").val()){
+                    alert("请输入收件人");
+                    return false;
+                }
+                if(!$("#contact").val()){
+                    alert("请输入联系方式");
+                    return false;
+                }
+                if(!$("#address").val()){
+                    alert("请输入邮寄地址");
+                    return false;
+                }
+                return true;
+            }
+</script>
+        </div>
+    </div>
+</div>
+ 
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+    <script src="js/chardinjs.min.js"></script>
+    <script src="js/site.js"></script>
+    
+
+
+
+
+</body></html>

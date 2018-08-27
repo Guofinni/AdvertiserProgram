@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://ad.henkuai.com/ad/action?action=sta_click -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>广告主-充值</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/chardinjs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="css/mains.css">
+    
+</head>
+
+<body class="with_botton_navbar">
+<!-- 弹出框 -->
+     
+<nav class="navbar navbar-default">
+<!-- 导航条 -->
+    <div class="container-fluid">
+    	<div class="row">
+        <div class="col-sm-3 navbar-header">
+            <a class="navbar-brand" href="index.html">开发者网盟平台</a>
+        </div>
+        <div class="collapse navbar-collapse" id="header-btns-area">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span>用户00854</span></a><a href="#"><span class="num">0元</span></a></li>
+                <li><a href="ad_news.html" class="message"><i class="ms-number">99</i></a></li>
+                <li><a href="login.html" class="exit"></a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</nav>
+     
+<div class="container-fluid cont-main">
+    <div class="row">
+        <div class="col-sm-2 nav-left" id="nav-left">
+            <!-- 左侧导航 -->
+            <ul class="nav nav-pills nav-stacked">
+                <li><a class="stair stair1">功能</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_release_CPC_task.html">发布CPC任务</a></li>
+                    </ul>
+                </li>
+                <li><a class="stair stair2">管理</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_task_manager.html">任务管理</a></li>
+                        <li><a href="ad_blacklist.html">黑名单管理</a></li>
+                    </ul>
+                </li>
+                <li><a class="stair stair3"><i class="fa fa-user-secret"></i>个人中心</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_basic_information.html">基本信息</a></li>
+                        <li class="active"><a href="ad_recharge.html">充值</a></li>
+                        <li><a href="ad_recharge_record.html">充值记录</a></li>
+                        <li><a href="ad_application_invoice.html">申请发票</a></li>
+                        <li><a href="ad_password.html">修改密码</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="left-side">
+            	<p><a href="#"><img src="images/qq.png"></a> | <a href="#">反馈建议</a></p>
+                <p>版本号：2.0.0</p>
+            </div>
+        </div>
+        <div class="col-sm-10 cont-right" id="cont-right">
+            <div class="page-header clear_top_margin">
+                <h1 class="first-title title-1">充值</h1>
+            </div>
+            <div class="panel-body">
+            	<div class="panel-recharge">
+                  <dl class="col-sm-6">
+                    <dt><img src="images/weixin.png">&nbsp;&nbsp;<strong>微信充值</strong></dt>  
+                    <dd style="padding-top:10px;">
+                        <form class="form-horizontal" method="post" onsubmit="return chech_adpub();">
+                            <div class="form-group">
+                                <label for="fee" class="col-sm-3 control-label">充值金额</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control input-1" id="fee" name="fee" onblur="overFormat(this)" >
+                                </div>
+                                <button type="submit" class="btn btn-success col-sm-2"  onclick="produce_prepay_code()">提交</button>
+                            </div>
+                        </form>
+                    </dd>
+                  </dl>
+                  <dl class="col-sm-6">
+                    <dt style="padding-left:50px;"><img src="images/public.png">&nbsp;&nbsp;<strong>对公账号充值</strong></dt>  
+                    <dd style="border-left:1px solid #ccc; padding-left:50px;">
+                        <p>1.确认我们双方的合作意向；<br>
+                        2.向平台工作人员获取平台的对公银行帐号，并进行打款；<br>
+                        3.打款结束后，平台工作人员会尽快为您的平台帐号进行充值；<br>
+                        4.有任何问题可联系客服<span class="red">QQ群209708735</span>。</p>
+                    </dd>
+                  </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+    <script src="js/chardinjs.min.js"></script>
+    <script src="js/site.js"></script>
+    
+
+
+
+
+</body></html>

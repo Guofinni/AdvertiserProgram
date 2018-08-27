@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://ad.henkuai.com/ad/action?action=sta_click -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>广告主-发布CPC任务</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/chardinjs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="css/mains.css">
+    
+
+</head>
+
+
+<body class="with_botton_navbar">
+<!-- 弹出框 -->
+<div class="modal fade in" id="get_radio_button" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="margin-top:100px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">投放行业</h4>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                	<div class="input-checkbox">
+                    	<form class="form-horizontal" action="">
+                            <div class="form-group">
+                            	<p><input type="checkbox" id="checkbox" value="1" onclick="check()" /> 
+                           		全部</p>
+                                <ul>
+                                	<li><input type="checkbox" name="box" value="情感咨询">情感咨询</li>
+                                	<li><input type="checkbox" name="box" value="养生">养生</li>
+                                	<li><input type="checkbox" name="box" value="新闻">新闻</li>
+                                	<li><input type="checkbox" name="box" value="财经">财经</li>
+                                	<li><input type="checkbox" name="box" value="科技">科技</li>
+                                	<li><input type="checkbox" name="box" value="阅读">阅读</li>
+                                	<li><input type="checkbox" name="box" value="搞笑">搞笑</li>
+                                	<li><input type="checkbox" name="box" value="趣玩">趣玩</li>
+                                	<li><input type="checkbox" name="box" value="时尚">时尚</li>
+                                	<li><input type="checkbox" name="box" value="生活">生活</li>
+                                	<li><input type="checkbox" name="box" value="健康">健康</li>
+                                	<li><input type="checkbox" name="box" value="旅游">旅游</li>
+                                	<li><input type="checkbox" name="box" value="运动">运动</li>
+                                	<li><input type="checkbox" name="box" value="影音">影音</li>
+                                	<li><input type="checkbox" name="box" value="教育">教育</li>
+                                	<li><input type="checkbox" name="box" value="品牌">品牌</li>
+                                	<li><input type="checkbox" name="box" value="购物">购物</li>
+                                	<li><input type="checkbox" name="box" value="明星名人">明星名人</li>
+                                	<li><input type="checkbox" name="box" value="游戏">游戏</li>
+                                </ul>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-success" id="to_server_btn" onclick="return checkedValues()">确定</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade in" id="get_price" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="margin-top:100px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">提高单价</h4>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                	<div>
+                    	<h2>提高单价</h2>
+                    	<form class="form-horizontal" action="" onsubmit="">
+                            <div class="form-group text-center">
+                                <input type="text" class="form-control" id="new_price" name="new_price" placeholder="输入新的单价" value="">
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="submit" class="btn btn-success" onclick="return price_up();">确定</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade in" id="get_budget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="margin-top:100px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">增加预算</h4>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                	<div>
+                    	<h2>增加预算</h2>
+                    	<form class="form-horizontal" action="">
+                         	<div class="form-group text-center">
+                                <input type="text" class="form-control" id="new_amount" name="new_amount" placeholder="输入您增加的预算金额" value="">
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="submit" class="btn btn-success" onclick="return amount_up();">确定</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 弹出框 end -->
+
+<nav class="navbar navbar-default">
+<!-- 导航条 -->
+    <div class="container-fluid">
+    	<div class="row">
+        <div class="col-sm-3 navbar-header">
+            <a class="navbar-brand" href="index.html">开发者网盟平台</a>
+        </div>
+        <div class="collapse navbar-collapse" id="header-btns-area">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span>用户00854</span></a><a href="#"><span class="num">0元</span></a></li>
+                <li><a href="ad_news.html" class="message"><i class="ms-number">99</i></a></li>
+                <li><a href="login.html" class="exit"></a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</nav>
+     
+<div class="container-fluid cont-main">
+    <div class="row">
+        <div class="col-sm-2 nav-left">
+            <!-- 左侧导航 -->
+            <ul class="nav nav-pills nav-stacked">
+                <li><a class="stair stair1">功能</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_release_CPC_task.html">发布CPC任务</a></li>
+                    </ul>
+                </li>
+                <li><a class="stair stair2">管理</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li class="active"><a href="ad_task_manager.html">任务管理</a></li>
+                        <li><a href="ad_blacklist.html">黑名单管理</a></li>
+                    </ul>
+                </li>
+                <li><a class="stair stair3"><i class="fa fa-user-secret"></i>个人中心</a></li>
+                <li>
+                    <ul class="nav nav-pills nav-stacked nav-secned">
+                        <li><a href="ad_basic_information.html">基本信息</a></li>
+                        <li><a href="ad_recharge.html">充值</a></li>
+                        <li><a href="ad_recharge_record.html">充值记录</a></li>
+                        <li><a href="ad_application_invoice.html">申请发票</a></li>
+                        <li><a href="ad_password.html">修改密码</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="left-side">
+            	<p><a href="#"><img src="images/qq.png"></a> | <a href="#">反馈建议</a></p>
+                <p>版本号：2.0.0</p>
+            </div>
+        </div>
+        <div class="col-sm-10 cont-right" id="cont-right">
+            <div class="page-header clear_top_margin">
+                <h1 class="first-title title-1">编辑广告</h1>
+            </div>
+            <form class="form-horizontal" method="post" enctype="multipart/form-data" onsubmit="return chech_adpub();" action="/advertise/ad/do_edit">
+                <div class="form-group">
+                    <label for="industry" class="col-sm-2 control-label">广告类型</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" id="industry" name="industry" onchange="count_change();" placeholder="广告类型">
+                            <option value="1">CPC</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="form-group ">
+                    <label for="price" class="col-sm-2 control-label">广告单价</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="price" name="price" placeholder="单价" disabled="disabled" value="0.1"><a style=" font-size:12px; margin-left:15px;" href="javascript:void(0);" onclick="get_price(this)">提高单价</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount" class="col-sm-2 control-label">投放预算</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" id="amount" name="amount" placeholder="投放预算" disabled="disabled" value="2000"><a style=" font-size:12px; margin-left:15px;" href="javascript:void(0);" onClick="get_budget(this)">增加预算</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount" class="col-sm-2 control-label">投放行业</label>
+                    <div class="col-sm-8">
+                    	<div class="checkbox_list"></div>
+                        <button type="button" class="btn" onclick="showGetradiobutton(this)">选择</button>
+                        <!--<span>(必填)</span>-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="count" class="col-sm-2 control-label">广告标题</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="title" name="title" maxlength="30" placeholder="请输入30以内的标题" value="">
+                        <input type="text"  id="id" name="id" hidden="hidden" value="<?php echo $id;?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="count" class="col-sm-2 control-label">广告页面链接</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="ad_url" name="ad_url" placeholder="请填入如http://ww.9miao.com格式的链接地址" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="count" class="col-sm-2 control-label">广告描述</label>
+                    <div class="col-sm-8">
+                        <textarea name="desc" class="form-control" id="desc" cols="" rows="10" onkeyup="checkLen(this)" placeholder="请简单描述您对广告投放的要求或期望，不超过150字。"></textarea>
+                        <span>您还可以输入 <span id="count">150</span> 个文字</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="file-boot" class="col-sm-2 control-label"></label>
+                    <div class="col-sm-8">
+                        <button type="button" id="file-boot"  class="btn">上传附件</button>
+                        <div id="test" style="display:none;"><p id="test_p" class="up-load">已上传的文件名称文件名称.rar</p><a href="javascript:;" class="red" onclick="clearFile();">删除</a></div>
+                        <div id="input-file"><input name="" id="file-load" type="file" class="upload" value="上传附件" onChange="if(this.value)insertTitle(this.value);"></div>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                	<div class="col-sm-2 col-xs-push-2">
+                    <input type="hidden" id="caozuo" name="caozuo" value="edit">
+                    <button type="submit" class="btn btn-success btn-block">确定</button>
+                    </div>
+                </div>
+            </form>
+            <script language="javascript" type="text/javascript" src="<?php echo base_url('asset/js/My97DatePicker/WdatePicker.js')?>"></script>
+            <script>
+                all_price_data = <?php echo $rule;?>;
+                function formatMoney(s,n){
+                    n = n>0 && n<=20 ? n : 2;
+                    s = parseFloat((s+"").replace(/[^\d\.-]/g,"")).toFixed(n)+"";
+                    return s;
+                }
+        
+                function overFormat(th){
+                    var v = th.value;
+                    if(v === ''){
+                        v = '0';
+                    }else if(v === '0'){
+                        v = '0';
+                    }else if(v === '0.'){
+                        v = '0';
+                    }else if(/^0+\d+\.?\d*.*$/.test(v)){
+                        v = v.replace(/^0+(\d+\.?\d*).*$/, '$1');
+                        v = inp.getRightPriceFormat(v).val;
+                    }else if(/^0\.\d$/.test(v)){
+                        v = v + '';
+                    }else if(!/^\d+\.\d{2}$/.test(v)){
+                        if(/^\d+\.\d{2}.+/.test(v)){
+                            v = v.replace(/^(\d+\.\d{2}).*$/, '$1');
+                        }else if(/^\d+$/.test(v)){
+                            v = v + '';
+                        }else if(/^\d+\.$/.test(v)){
+                            v = v + '';
+                        }else if(/^\d+\.\d$/.test(v)){
+                            v = v + '';
+                        }else if(/^[^\d]+\d+\.?\d*$/.test(v)){
+                            v = v.replace(/^[^\d]+(\d+\.?\d*)$/, '$1');
+                        }else if(/\d+/.test(v)){
+                            v = v.replace(/^[^\d]*(\d+\.?\d*).*$/, '$1');
+                            ty = false;
+                        }else if(/^0+\d+\.?\d*$/.test(v)){
+                            v = v.replace(/^0+(\d+\.?\d*)$/, '$1');
+                            ty = false;
+                        }else{
+                            v = '0';
+                        }
+                    }
+                    th.value = v;
+                    $(".count").html(th.value);
+                }
+                function get_price(){
+                    industry = parseInt($("#industry").val());
+                    for(i in all_price_data){
+                        if(all_price_data[i].id==industry){
+                            return all_price_data[i].click_price
+                        }
+                    }
+        
+                }
+        
+                function count_change(){
+                    var amount=formatMoney(Math.abs(parseInt($("#count").val()))*get_price()*0.01,2);
+                    $("#amount").val(amount);
+                }
+                function chech_adpub(){
+                    //获取复选框的值
+                    var str=document.getElementsByName("plat");
+                    var objarray=str.length;
+                    var platstr="";
+                    for (i=0;i<objarray;i++){
+                        if(str[i].checked == true)
+                            platstr+=str[i].value+",";
+                    }
+                    if(!$("#title").val()){
+                        alert("请输入广告标题");
+                        return false;
+                    }
+                    if(!$("#ad_url").val()){
+                        alert("请输入广告页面链接");
+                        return false;
+                    }
+                    var type = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/;
+                    var re = new RegExp(type);
+                    if ($("#ad_url").val().match(re) == null) {
+                        alert("请输入正确的链接!");
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
+        
+            <script language="javascript">
+                function insertTitle(path){
+                    var test1 = path.lastIndexOf("/"); //对路径进行截取
+                    var test2 = path.lastIndexOf("\\"); //对路径进行截取
+                    var test= Math.max(test1, test2);
+        
+                    if(test<0){
+                        document.getElementById("test_p").innerHTML = path;
+                    }else{
+                        document.getElementById("test_p").innerHTML = path.substring(test + 1); //赋值文件名
+                        document.getElementById("test").style.display = "block";
+                        document.getElementById("file-load").style.display = "none";
+                        document.getElementById("file-boot").style.display = "none";
+        
+                    }
+                }
+                function clearFile(){
+                    document.getElementById("test_p").innerHTML = ""; //赋值文件名
+                    document.getElementById("test").style.display = "none";
+                    document.getElementById("file-load").style.display = "block";
+                    document.getElementById("file-boot").style.display = "block";
+                    document.getElementById("input-file").innerHTML = "<input name='file' id='file-load' type='file' class='upload' value='上传附件' onChange='if(this.value)insertTitle(this.value);'>";
+                }
+            </script>
+        <script type="text/javascript"> 
+        function checkLen(obj)  
+        { 
+            var maxChars = 150;//最多字符数 
+            if (obj.value.length > maxChars) 
+            obj.value = obj.value.substring(0,maxChars); 
+            var curr = maxChars - obj.value.length; 
+            document.getElementById("count").innerHTML = curr.toString(); 
+        } 
+        </script>
+        </div>
+	</div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+    <script src="js/chardinjs.min.js"></script>
+    <script src="js/site.js"></script>
+    <!-- 弹出窗 -->
+<script type="text/javascript">
+function showGetradiobutton() {
+  $('#get_radio_button').modal();
+}
+function get_price() {
+  $('#get_price').modal();
+}
+function get_budget() {
+  $('#get_budget').modal();
+}
+</script>
+
+<script type="text/javascript">
+//复选框onclick事件：点击全选，再次点击全不选
+function check(){
+//添加外部判断：奇数点击时value为1，全不选，否则全选，如此可以在反选与全选间衍生出极端选择的方案
+var checkbox = document.getElementById('checkbox');
+//value初始化为1，此处的三目执行后value一定不为1，而页面初始化时checkbox都为未选中状态，所以value为1时全不选
+checkbox.value==1?checkbox.value=2 : checkbox.value=1;
+var checkboxs = document.getElementsByName('box');
+for(var i=0; i<checkboxs.length;i++){
+//************
+if(checkbox.value==1){
+checkboxs[i].checked=false;//全不选
+}else{
+checkboxs[i].checked=true;//全选
+}
+//************
+//checkboxs[i].checked?checkboxs[i].checked=false:checkboxs[i].checked=true;//反选
+}}
+function checkedValues(){ 
+	var arr=new Array(); 
+	var checkbox=document.getElementsByName('box'); 
+	
+	for(var i=0;i<checkbox.length;i++){ 
+		if(checkbox[i].checked==true){ 
+			arr.push(checkbox[i].value); 
+			checkbox_lists=document.getElementById('checkbox_list');
+			var spans = document.createElement("span"); 
+			spans.innerHTML="<span>"+checkbox[i].value+"</span>";
+			checkbox_lists.appendChild(spans);
+		} 
+	}
+	$('#get_radio_button').modal('hide');
+}
+//提高单价
+function price_up(){
+	//获取复选框的值
+	if(!$("#new_price").val()){
+		alert("请输入广告单价");
+		return false;
+	}
+	var sdr=/^\d+(\.\d+)?$/;
+	var re = new RegExp(sdr);
+	if ($("#new_price").val().match(re) == null) {
+		alert("请输入正确的数字!");
+		return false;
+	}
+	var str=document.getElementById("price");
+	if (parseFloat($("#new_price").val())<=parseFloat(str.value)) {
+		alert("请输入大于当前单价的值!");
+		return false;
+	}
+	str.value=($("#new_price").val());
+}
+//提高预算
+function amount_up(){
+	if(!$("#new_amount").val()){
+		alert("请输入新的预算金额");
+		return false;
+	}
+	var sdt=/^[1-9]\d*$/;
+	var re = new RegExp(sdt);
+	if ($("#new_amount").val().match(re) == null) {
+		alert("请输入正确的数字!");
+		return false;
+	}
+	var amounts=document.getElementById("amount");
+	if (parseInt($("#new_amount").val())<=parseInt(amounts.value)) {
+		alert("请输入大于当前单价的值!");
+		return false;
+	}
+	amounts.value=($("#new_amount").val());
+}
+
+</script>
+
+</body></html>
